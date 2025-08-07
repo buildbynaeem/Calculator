@@ -1,0 +1,178 @@
+/* Custom CSS for Calculator with Bootstrap Integration */
+
+/* Background gradient for the page */
+.bg-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Calculator container styling */
+.calculator-container {
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Main calculator styling */
+.calculator {
+    width: 320px;
+    padding: 20px;
+    background: #1a1a1a;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Display screen styling */
+.display-container {
+    margin-bottom: 20px;
+}
+
+.display {
+    height: 80px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: right;
+    background: #000;
+    color: #fff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 0 15px;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.display:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Buttons grid using CSS Grid */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px;
+}
+
+/* Button base styling */
+.buttons-grid button {
+    height: 60px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+/* Number buttons */
+.number {
+    background: #333 !important;
+    color: #fff !important;
+    border: 1px solid #555 !important;
+}
+
+.number:hover {
+    background: #444 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.number:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Operator buttons */
+.operator {
+    font-weight: bold;
+}
+
+.btn-warning.operator {
+    background: #ff9500 !important;
+    border-color: #ff9500 !important;
+}
+
+.btn-warning.operator:hover {
+    background: #ffad33 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 149, 0, 0.4);
+}
+
+.btn-secondary.operator {
+    background: #666 !important;
+    border-color: #666 !important;
+}
+
+.btn-secondary.operator:hover {
+    background: #777 !important;
+    transform: translateY(-2px);
+}
+
+.btn-info.operator {
+    background: #17a2b8 !important;
+    border-color: #17a2b8 !important;
+}
+
+.btn-info.operator:hover {
+    background: #1fc8e3 !important;
+    transform: translateY(-2px);
+}
+
+/* Equals button */
+.equals {
+    background: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+.equals:hover {
+    background: #34ce57 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Zero button spans two columns */
+.zero-btn {
+    grid-column: span 1;
+}
+
+/* Button active states */
+.buttons-grid button:active {
+    transform: translateY(0);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 576px) {
+    .calculator {
+        width: 280px;
+        padding: 15px;
+    }
+    
+    .display {
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .buttons-grid button {
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    .calculator-container {
+        padding: 10px;
+    }
+}
+
+/* Animation for button press feedback */
+@keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.button-pressed {
+    animation: buttonPress 0.1s ease;
+}
